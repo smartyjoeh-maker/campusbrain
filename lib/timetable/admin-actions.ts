@@ -23,9 +23,9 @@ function mapCourseToRow(course: { code: string; name: string; lecturer: string |
 }
 
 /**
- * Map a session to a DB row, using the course name from the deduplicated
- * courses array (keyed by code). Sessions whose course_code doesn't exist
- * in the courses map are filtered out by the caller.
+ * Map a session to a DB row.
+ * If the course_code matches a course in the catalog, use that course's name/lecturer.
+ * Otherwise, keep the session's own course_name/lecturer_name so sessions aren't lost.
  */
 function mapSessionToRow(
   session: {
@@ -38,16 +38,15 @@ function mapSessionToRow(
     venue: string | null;
   },
   courseByCode: Map<string, { name: string; lecturer_name: string }>
-): TimetableGroup["rows"][number] & { venue: string | null } | null {
+): TimetableGroup["rows"][number] & { venue: string | null } {
   const course = courseByCode.get(session.courseCode);
-  if (!course) return null; // session references a course not in the catalog
   return {
     day_of_week: session.dayOfWeek,
     start_time: session.startTime,
     end_time: session.endTime,
     course_code: session.courseCode,
-    course_name: course.name,
-    lecturer_name: course.lecturer_name,
+    course_name: course ? course.name : (session.courseName || ""),
+    lecturer_name: course ? course.lecturer_name : (session.lecturer || ""),
     venue: session.venue ?? null,
   };
 }
@@ -103,9 +102,7 @@ export async function previewAdminTimetable(form: FormData): Promise<{ error?: s
     const groups: TimetableGroup[] = extraction.groups.map((g) => {
       const courses = deduplicateCourses(g.courses.map(mapCourseToRow));
       const courseByCode = new Map(courses.map(c => [c.code, c]));
-      const rows = g.sessions
-        .map(s => mapSessionToRow(s, courseByCode))
-        .filter((r): r is TimetableGroup["rows"][number] & { venue: string | null } => r !== null);
+      const rows = g.sessions.map(s => mapSessionToRow(s, courseByCode));
       return {
         programme: g.programme,
         year: g.year,
