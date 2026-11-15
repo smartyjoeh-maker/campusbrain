@@ -7,6 +7,7 @@ export type TimetableRow = {
   course_code: string;
   course_name: string;
   lecturer_name: string;
+  venue?: string | null;
 };
 
 export type TimetableCourse = { code: string; name: string; lecturer_name: string };

@@ -12,9 +12,10 @@ const DAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satu
  * Each session keeps its own Time cell — Time never merges.
  */
 function groupRowsByDay(rows: AdminTimetablePreview["groups"][0]["rows"]) {
-  const map = new Map<string, AdminTimetablePreview["groups"][0]["rows"][]>();
+  const map = new Map<string, AdminTimetablePreview["groups"][0]["rows"]>();
   for (const row of rows) {
-    const list = map.get(row.day_of_week) ?? [];
+    const list: AdminTimetablePreview["groups"][0]["rows"] =
+      map.get(row.day_of_week) ?? [];
     list.push(row);
     map.set(row.day_of_week, list);
   }
