@@ -1,0 +1,84 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 3123 >>
+stream
+BT
+/F1 7 Tf
+48 754 Td
+9 TL
+(# CAMPUSBRAIN TRAINING SAMPLE - ALL PEOPLE AND RECORDS BELOW ARE FICTIONAL) Tj
+T*
+(# Student rows: registration | last name | full name | year | programme | gender | phone | UQF level | CR/NO) Tj
+T*
+(# Academic details below match the user-provided first-year Diploma in Computer Science timetable.) Tj
+T*
+(# Two CR rows are approved only when an administrator confirms this import in CampusBrain.) Tj
+T*
+(DEMO-STU-0001 | Demo0001 | Amani CampusBrain Demo0001 | 1 | Diploma In Computer Science | Female | +000 000 00 01 | UQF 6 | CR) Tj
+T*
+(DEMO-STU-0002 | Demo0002 | Neema CampusBrain Demo0002 | 1 | Diploma In Computer Science | Male | +000 000 00 02 | UQF 6 | CR) Tj
+T*
+(DEMO-STU-0003 | Demo0003 | Baraka CampusBrain Demo0003 | 1 | Diploma In Computer Science | Male | +000 000 00 03 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0004 | Demo0004 | Zawadi CampusBrain Demo0004 | 1 | Diploma In Computer Science | Female | +000 000 00 04 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0005 | Demo0005 | Jabari CampusBrain Demo0005 | 1 | Diploma In Computer Science | Male | +000 000 00 05 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0006 | Demo0006 | Rehema CampusBrain Demo0006 | 1 | Diploma In Computer Science | Female | +000 000 00 06 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0007 | Demo0007 | Kito CampusBrain Demo0007 | 1 | Diploma In Computer Science | Male | +000 000 00 07 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0008 | Demo0008 | Imani CampusBrain Demo0008 | 1 | Diploma In Computer Science | Female | +000 000 00 08 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0009 | Demo0009 | Nuru CampusBrain Demo0009 | 1 | Diploma In Computer Science | Female | +000 000 00 09 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0010 | Demo0010 | Taji CampusBrain Demo0010 | 1 | Diploma In Computer Science | Male | +000 000 00 10 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0011 | Demo0011 | Faraji CampusBrain Demo0011 | 1 | Diploma In Computer Science | Male | +000 000 00 11 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0012 | Demo0012 | Upendo CampusBrain Demo0012 | 1 | Diploma In Computer Science | Female | +000 000 00 12 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0013 | Demo0013 | Tumaini CampusBrain Demo0013 | 1 | Diploma In Computer Science | Female | +000 000 00 13 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0014 | Demo0014 | Juma CampusBrain Demo0014 | 1 | Diploma In Computer Science | Male | +000 000 00 14 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0015 | Demo0015 | Asha CampusBrain Demo0015 | 1 | Diploma In Computer Science | Female | +000 000 00 15 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0016 | Demo0016 | Bahati CampusBrain Demo0016 | 1 | Diploma In Computer Science | Male | +000 000 00 16 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0017 | Demo0017 | Pendo CampusBrain Demo0017 | 1 | Diploma In Computer Science | Female | +000 000 00 17 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0018 | Demo0018 | Kassim CampusBrain Demo0018 | 1 | Diploma In Computer Science | Male | +000 000 00 18 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0019 | Demo0019 | Subira CampusBrain Demo0019 | 1 | Diploma In Computer Science | Female | +000 000 00 19 | UQF 6 | NO) Tj
+T*
+(DEMO-STU-0020 | Demo0020 | Rafiki CampusBrain Demo0020 | 1 | Diploma In Computer Science | Male | +000 000 00 20 | UQF 6 | NO) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3485
+%%EOF

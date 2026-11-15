@@ -1,0 +1,78 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2261 >>
+stream
+BT
+/F1 7 Tf
+48 754 Td
+9 TL
+(# CAMPUSBRAIN TRAINING SAMPLE - PHONE NUMBERS ARE INVALID +000 PLACEHOLDERS) Tj
+T*
+(# Lecturer display names and course details are copied from the user-provided timetable and are abbreviated there.) Tj
+T*
+(# Do not use these sample rows as authentic lecturer registration records.) Tj
+T*
+(# Lecturer rows: last name | full name | phone | courseCode~courseName~programme;...) Tj
+T*
+(Yassin | Yassin A | +000 100 00 01 | HS 6101~Communication Skills~Diploma In Computer Science) Tj
+T*
+(Saria | Saria V | +000 100 00 02 | MS 6101~Algebra~Diploma In Computer Science) Tj
+T*
+(Mzava | Mzava N | +000 100 00 03 | IT 6101~Computer Application~Diploma In Computer Science) Tj
+T*
+(Pangahela | Pangahela R | +000 100 00 04 | CS 6101~Computer Maintainance And Repair~Diploma In Computer Science) Tj
+T*
+(Bynite | Bynite D | +000 100 00 05 | IT 6102~Computer Networks~Diploma In Computer Science) Tj
+T*
+(Ruvugo | Ruvugo D | +000 100 00 06 | IF 6102~Fundamental Of Business Intelligence~Diploma In Computer Science) Tj
+T*
+(Sanga | Sanga N | +000 100 00 07 | CS 6258~Computer Architecture~Diploma In Computer Science) Tj
+T*
+(Juma | Juma M | +000 100 00 08 | MS 6221~Calculus~Diploma In Computer Science) Tj
+T*
+(Sikoro | Sikoro A | +000 100 00 09 | ET 6201~Digital Electronics~Diploma In Computer Science;CS 6376~Project I~Diploma In Computer Science) Tj
+T*
+(Dastan | Dastan D | +000 100 00 10 | CS 6202~Object Oriented Programming 1~Diploma In Computer Science) Tj
+T*
+(Mtowe | Mtowe R | +000 100 00 11 | IT 6217~Database Systems Design And Management~Diploma In Computer Science) Tj
+T*
+(Mwakifuna | Mwakifuna D | +000 100 00 12 | IT 6216~Systems Analysis And Design~Diploma In Computer Science) Tj
+T*
+(Malissa | Malissa E | +000 100 00 13 | CS 6371~Analysis And Design Algorithms~Diploma In Computer Science) Tj
+T*
+(Lupenza | Lupenza E | +000 100 00 14 | CS 6372~Research Methodology~Diploma In Computer Science) Tj
+T*
+(Nchia | Nchia E | +000 100 00 15 | CS 6373~Information System Management~Diploma In Computer Science) Tj
+T*
+(Mwakalapuka | Mwakalapuka K | +000 100 00 16 | CS 6374~Entrepreneurship And Development~Diploma In Computer Science) Tj
+T*
+(Andrew | Andrew R | +000 100 00 17 | CS 6375~It Security~Diploma In Computer Science) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2623
+%%EOF
