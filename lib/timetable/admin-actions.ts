@@ -125,25 +125,46 @@ export async function previewAdminTimetable(form: FormData): Promise<{ error?: s
   }
 }
 
-export async function publishAdminTimetable(preview: AdminTimetablePreview): Promise<{ error?: string; published?: { groups: number; entries: number } }> {
+export async function publishAdminTimetable(preview: AdminTimetablePreview): Promise<{ error?: string; published?: { groups: number; entries: number }; message?: string }> {
   const context = await authorizedAdmin();
   if (!context) return { error: "Administrator access is required to publish timetables." };
   if (!preview || !Array.isArray(preview.groups) || preview.groups.length === 0 || !/^timetables\/[0-9a-f-]{36}\/[A-Za-z0-9._-]+$/.test(preview.storagePath) || !/^[0-9a-f-]{36}$/i.test(preview.documentId)) return { error: "Review a valid timetable preview before publishing." };
-  try {
-    // Filter out groups with no courses (RPC requires at least one course per group)
-    const validGroups = preview.groups.filter(g => g.courses && g.courses.length > 0);
-    if (validGroups.length === 0) return { error: "No courses to publish." };
-    const { data, error } = await context.admin.rpc("commit_admin_timetable_import", {
-      p_document_id: preview.documentId,
-      p_filename: preview.filename,
-      p_storage_path: preview.storagePath,
-      p_actor: context.user.id,
-      p_groups: validGroups,
-    });
-    if (error || !data || typeof data !== "object") return { error: "The timetable import did not complete. No partial import was committed." };
-    const result = data as { groups?: number; entries?: number };
-    return { published: { groups: result.groups ?? validGroups.length, entries: result.entries ?? validGroups.reduce((sum, g) => sum + g.rows.length, 0) } };
-  } catch {
-    return { error: "The timetable import could not be completed. No changes were committed." };
+
+  // Filter out groups with no courses
+  const validGroups = preview.groups.filter(g => g.courses && g.courses.length > 0);
+  if (validGroups.length === 0) return { error: "No courses to publish." };
+
+  let totalGroups = 0;
+  let totalEntries = 0;
+  const errors: string[] = [];
+
+  // Publish each group individually so one failure doesn't block all
+  for (const g of validGroups) {
+    try {
+      const { data, error } = await context.admin.rpc("commit_admin_timetable_import", {
+        p_document_id: preview.documentId,
+        p_filename: preview.filename,
+        p_storage_path: preview.storagePath,
+        p_actor: context.user.id,
+        p_groups: [g], // Send one group at a time
+      });
+      if (error || !data || typeof data !== "object") {
+        errors.push(`Group ${g.programme} Year ${g.year}: ${error?.message || "Unknown error"}`);
+      } else {
+        const result = data as { groups?: number; entries?: number };
+        totalGroups += result.groups ?? 1;
+        totalEntries += result.entries ?? g.rows.length;
+      }
+    } catch {
+      errors.push(`Group ${g.programme} Year ${g.year}: Unexpected error`);
+    }
   }
+
+  if (totalGroups === 0) return { error: errors.length > 0 ? errors.join("; ") : "The timetable import did not complete. No partial import was committed." };
+
+  const summary = errors.length > 0
+    ? `Publish completed with warnings: ${totalGroups} groups published. Errors: ${errors.join("; ")}`
+    : `Publish completed: ${totalGroups} groups published.`;
+
+  return { error: undefined, published: { groups: totalGroups, entries: totalEntries }, message: summary };
 }

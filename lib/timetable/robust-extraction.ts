@@ -155,10 +155,6 @@ const ORDINAL_YEAR: Record<string, number> = {
 // Helpers
 // ---------------------------------------------------------------------------
 
-function normalizeCode(code: string): string {
-  return code.replace(/\s+/g, "").toUpperCase();
-}
-
 function isNonCourseHeading(text: string): boolean {
   const lower = text.trim().toLowerCase();
   if (NON_COURSE_HEADINGS.has(lower)) return true;
@@ -650,7 +646,7 @@ function parseTimetableGridLines(
       if (
         previous &&
         previous.dayOfWeek === day &&
-        previous.courseCode === normalizeCode(courseCode) &&
+        previous.courseCode === courseCode &&
         previous.endTime === startTime
       ) {
         previous.endTime = endTime;
@@ -661,7 +657,7 @@ function parseTimetableGridLines(
         dayOfWeek: day,
         startTime,
         endTime,
-        courseCode: normalizeCode(courseCode),
+        courseCode,
         courseName: null,
         lecturer: null,
         venue,
@@ -746,7 +742,7 @@ export function extractTimetableGroupsRobust(
     // Build code -> course map for resolving session course names/lecturers
     const courseMap = new Map<string, ExtractedCourse>();
     for (const c of courses) {
-      const key = normalizeCode(c.code);
+      const key = c.code;
       if (!courseMap.has(key)) {
         courseMap.set(key, c);
       } else {
